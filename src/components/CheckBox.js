@@ -18,7 +18,7 @@ const CustomLabel = styled.label.attrs({
 // $FlowFixMe
 const CheckBox = props => (
   <CustomCheckBox onChange={props.onChange}>
-    <CustomInput checked={props.defaultPrivacy.public} />
+    <CustomInput checked={props.defaultPrivacy.publicMod} />
     <CustomLabel>{props.label}</CustomLabel>
   </CustomCheckBox>
 );

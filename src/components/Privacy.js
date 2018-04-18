@@ -9,8 +9,8 @@ const PrivatePrivacy = styled.span.attrs({
 })``;
 // $FlowFixMe
 const Privacy = props => {
-  const MyPrivacy = props.public ? PublicPrivacy : PrivatePrivacy;
-  const message = props.public ? 'Public' : 'Private';
+  const MyPrivacy = props.publicMod ? PrivatePrivacy : PublicPrivacy;
+  const message = props.publicMod ? 'Private' : 'Public';
   return <MyPrivacy>{message}</MyPrivacy>;
 };
 /** @component */

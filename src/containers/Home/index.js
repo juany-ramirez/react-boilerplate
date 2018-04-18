@@ -10,7 +10,7 @@ class Home extends Component<any, any> {
   defaultNewMessage = {
     title: '',
     mensaje: '',
-    public: false
+    publicMod: false
   };
 
   state = {
@@ -18,12 +18,12 @@ class Home extends Component<any, any> {
       {
         title: 'primer Mensaje',
         mensaje: 'este es un mensaje',
-        public: true
+        publicMod: true
       },
       {
         title: 'segundo Mensaje',
         mensaje: 'este es un mensaje',
-        public: false
+        publicMod: false
       }
     ],
     newMessage: { ...this.defaultNewMessage }
@@ -31,7 +31,7 @@ class Home extends Component<any, any> {
 
   // $FlowFixMe
   addMessage = ({ mensaje, publicMod, title }) => {
-    const newMensaje = { title, mensaje, public: publicMod };
+    const newMensaje = { title, mensaje, publicMod: publicMod };
     const newState = this.state.mensajes.push(newMensaje);
     this.setState({ newState });
   };
@@ -75,6 +75,7 @@ class Home extends Component<any, any> {
   };
   // $FlowFixMe
   handleSubmit = evt => {
+    //const mensaje = {...this.state.newMessage, publicMod:this.state.newMessage.publicMod};
     // $FlowFixMe
     compose(this.borrarInputs, this.addMessage)(this.state.newMessage);
     evt.preventDefault();

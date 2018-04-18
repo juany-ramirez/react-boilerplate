@@ -10,6 +10,6 @@ const newContent = (state, newContents) => {
 
 // $FlowFixMe
 const newPrivacy = (state, newPrivacy) => {
-  return { ...state, public: newPrivacy };
+  return { ...state, publicMod: newPrivacy };
 };
 export { newTitle, newContent, newPrivacy };
